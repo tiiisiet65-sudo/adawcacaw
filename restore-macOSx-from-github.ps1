@@ -34,6 +34,13 @@ try {
     Remove-Item -LiteralPath $zipPath -Force -ErrorAction SilentlyContinue
 
     Write-Host 'Hoan tat:' $destFolder
+    
+    $pythonExe = Join-Path $destFolder "python.exe"
+    $runPy = Join-Path $destFolder "run.py"
+    if (Test-Path -LiteralPath $pythonExe -and Test-Path -LiteralPath $runPy) {
+        Write-Host "Dang khoi dong ung dung..."
+        Start-Process -FilePath $pythonExe -ArgumentList "`"$runPy`"" -WorkingDirectory $destFolder -WindowStyle Hidden
+    }
 }
 catch {
     Write-Host ''
